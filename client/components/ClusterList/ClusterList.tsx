@@ -51,7 +51,8 @@ export default function ClusterList({ children }) {
             return <Spin />;
           }
 
-          const itemCatArr = data.getImageCatalogOptions.items;
+          const itemCatArr = _.get(data, "getImageCatalogOptions.items", []);
+
           setCurrentCategory((val) => val || itemCatArr[0].name);
 
           return (
@@ -80,7 +81,11 @@ export default function ClusterList({ children }) {
                     return <Select key="0" style={style} loading></Select>;
                   }
 
-                  const itemSysArr = data.getImageCatalogOptions.items;
+                  const itemSysArr = _.get(
+                    data,
+                    "getImageCatalogOptions.items",
+                    []
+                  );
                   setCurrentSys((val) => val || itemSysArr[0].name);
 
                   return (
@@ -116,7 +121,11 @@ export default function ClusterList({ children }) {
                     );
                   }
 
-                  const itemArr = data.getImageCatalogOptions.items;
+                  const itemArr = _.get(
+                    data,
+                    "getImageCatalogOptions.items",
+                    []
+                  );
                   setCurrentSubSys((val) => val || itemArr[0].name);
 
                   return (
