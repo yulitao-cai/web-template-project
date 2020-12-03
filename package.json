@@ -52,5 +52,8 @@
   },
   "webpack": {
     "publicPath": "/build/"
+  },
+  "dependencies": {
+    "snowy": "0.26.1"
   }
 }
